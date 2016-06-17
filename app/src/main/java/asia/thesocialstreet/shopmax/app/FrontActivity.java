@@ -1,5 +1,6 @@
 package asia.thesocialstreet.shopmax.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,14 +17,33 @@ public class FrontActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
+
+
+    }
+    public void loginfb(View view)
+    {
+        Intent intent = new Intent(FrontActivity.this,MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void logingmail(View view)
+    {
+        Intent intent = new Intent(FrontActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void loginmanual(View view)
+    {
+        Intent intent = new Intent(FrontActivity.this, ManualLoginActivity.class);
+        startActivity(intent);
     }
 
 }

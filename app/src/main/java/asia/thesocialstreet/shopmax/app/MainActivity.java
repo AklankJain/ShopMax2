@@ -3,6 +3,7 @@ package asia.thesocialstreet.shopmax.app;
 import android.*;
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.location.Geocoder;
@@ -11,6 +12,7 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -18,6 +20,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -48,6 +51,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+       // LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+       // View contentView = inflater.inflate(R.layout.activity_main,null,false);
+       //DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+     //  drawer.addView(contentView,0);
         list = (ListView) findViewById(R.id.listView);
         list.setAdapter(new AklankAdapter(this));
         if (mGoogleApiClient == null) {
@@ -59,6 +66,24 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                     .addApi(LocationServices.API)
                     .addApi(AppIndex.API).build();
         }
+
+        list.setOnItemClickListener(
+                new AdapterView.OnItemClickListener(){
+
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        String category = String.valueOf(parent.getItemAtPosition(position));
+
+
+                        //code specific to first list item
+                        Intent myIntent = new Intent(view.getContext(), MallDescription.class);
+                        startActivityForResult(myIntent, 0);
+
+
+
+                    }
+                }
+        );
 
     }
 
@@ -178,7 +203,7 @@ class AklankAdapter extends BaseAdapter {
         Resources res = c.getResources();
         String[] titles = res.getStringArray(R.array.titles);
         String[] desc = res.getStringArray(R.array.desc);
-        int[] images = {R.drawable.image1 , R.drawable.image1 , R.drawable.image1 , R.drawable.image1 , R.drawable.image1 , R.drawable.image1 , R.drawable.image1 };
+        int[] images = {R.drawable.mall_logo_list , R.drawable.mall_logo_list , R.drawable.mall_logo_list , R.drawable.mall_logo_list , R.drawable.mall_logo_list , R.drawable.mall_logo_list , R.drawable.mall_logo_list };
         for (int i =0;i<7;i++)
         {
             list.add(new SingleRow(titles[i] , desc[i] ,images[i]));

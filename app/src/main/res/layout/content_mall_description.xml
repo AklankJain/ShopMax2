@@ -15,7 +15,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
+        android:id="@+id/floormap"
         android:src="@drawable/mall_image"
         android:layout_marginBottom="318dp"
         android:layout_alignParentBottom="true"
@@ -26,8 +26,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Mall Name"
-        android:id="@+id/textView"
-        android:layout_alignTop="@+id/imageView2"
+        android:id="@+id/forgotpassword"
+        android:layout_alignTop="@+id/floormap"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="221dp" />
 
@@ -43,11 +43,13 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
+        android:id="@+id/navigate1"
         android:layout_marginTop="30dp"
         android:src="@drawable/navigate"
         android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="homefn"
+        android:clickable="true" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -55,7 +57,8 @@
         android:id="@+id/imageButton2"
         android:src="@drawable/open"
         android:layout_below="@+id/textView3"
-        android:layout_alignStart="@+id/imageButton" />
+        android:layout_alignStart="@+id/navigate1"
+        android:onClick="homefn"/>
 
     <TextView
         android:layout_width="50dp"
@@ -63,7 +66,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Or"
         android:id="@+id/textView3"
-        android:layout_below="@+id/imageButton"
+        android:layout_below="@+id/navigate1"
         android:layout_alignEnd="@+id/textView2" />
 
 </RelativeLayout>

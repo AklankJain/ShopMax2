@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#e0e0e0"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="asia.thesocialstreet.shopmax.app.FrontActivity"
     tools:showIn="@layout/activity_front">
@@ -19,28 +20,14 @@
         android:id="@+id/textView_shop"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Login"
-        android:id="@+id/textView_login"
-        android:layout_below="@+id/textView_shop"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp"
-        android:textSize="25dp" />
+        android:textSize="40dp"
+        android:singleLine="true"
+        android:textColorHighlight="@color/abc_secondary_text_material_light" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
-        android:layout_below="@+id/textView_login"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:id="@+id/navigate1"
         android:src="@drawable/fbnew"
         android:background="@null"
         android:adjustViewBounds="true"
@@ -48,30 +35,48 @@
         android:clickable="true"
         android:focusable="false"
         android:focusableInTouchMode="true"
-        />
+        android:onClick="loginfb"
+
+        android:layout_marginTop="105dp"
+        android:layout_below="@+id/logo"
+        android:layout_alignParentEnd="true" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageButton2"
-        android:layout_below="@+id/imageButton"
+        android:layout_below="@+id/navigate1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:src="@drawable/ggnew"
         android:background="@null"
         android:adjustViewBounds="true"
-        android:scaleType="centerInside"/>
+        android:scaleType="centerInside"
+        android:onClick="logingmail"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Or login manually"
-        android:id="@+id/textView"
-        android:textColor="@color/abc_input_method_navigation_guard"
-        android:textSize="25dp"
+        android:id="@+id/forgotpassword"
+        android:textColor="@color/button_material_dark"
+        android:textSize="15dp"
+        android:onClick="loginmanual"
+        android:autoText="false"
+        android:layout_marginTop="28dp"
         android:layout_below="@+id/imageButton2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:autoText="false" />
+        android:textColorLink="@color/accent_material_dark"
+        android:textIsSelectable="true"
+        android:typeface="sans" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:id="@+id/logo"
+        android:src="@drawable/shopmax"
+        android:layout_below="@+id/textView_shop"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="36dp" />
 </RelativeLayout>
