@@ -23,4 +23,10 @@
     </string-array>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_mall_description">MallDescription</string>
+    <string name="title_activity_front">FrontActivity</string>
+    <string name="title_activity_shop_by_category">ShopByCategory</string>
+    <string name="title_activity_categor_offers">CategorOffers</string>
+    <string name="title_activity_category_offers">CategoryOffers</string>
+    <string name="title_activity_offer_navigation">OfferNavigation</string>
+    <string name="title_activity_select_city">SelectCity</string>
 </resources>
